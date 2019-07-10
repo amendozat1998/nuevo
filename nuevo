@@ -1,0 +1,42 @@
+op=1
+while [ $op -ne 0 ]
+do
+	echo ------------------------------------
+	echo a---buscar el archivo 
+	echo b---archivo a buscar por nombre
+	echo c---bucar un  archivo con dir, nombre y tamaño
+	echo d---finalizar programa
+	echo ------------------------------------
+	echo escoja una opcion
+	read opc
+	case $opc in 
+	a)	
+	
+		find /home/sistemas/ -name prueba -print
+	;;
+
+	b)
+		echo Ingrese el nombre del archivo a buscar
+		read arch
+		find .  -name $arch -print
+	;;
+
+	c) 
+		echo ingrese la direccion donde desea buscar el archivo
+		read dir
+		echo ingrese el nombre del archivo 
+		read nom
+		echo ingrese el tamaño del archivo
+		read tam
+		find $dir -name $nom -size $tam -print
+		
+	;;
+
+	d)
+		echo fin del progra
+		op=0
+	;;
+esac
+done
+
+
